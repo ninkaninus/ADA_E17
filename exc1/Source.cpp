@@ -37,7 +37,6 @@ double fibo(int n)
 	}
 }
 
-
 int main()
 {
 	while (true) {
