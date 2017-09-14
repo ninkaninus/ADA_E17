@@ -41,8 +41,6 @@ int main()
 {
 	while (true) {
 
-		//test
-
 	std::cout << "input a value: ";
 
 	std::cin >> val; //input a value to test
