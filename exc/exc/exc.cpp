@@ -1,3 +1,9 @@
+// exc.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+
 #include <iostream>
 #include <sstream>
 #include <stack>
@@ -82,11 +88,29 @@ bool matchingBrackets(std::string text)
 	}
 }
 
+// exc 1
+int exc1()
+{
+	std::cout << "input a value: ";
+	std::cin >> val; //input a value to test
+	std::cout << "Sum of " << val << " = " << sum(val) << std::endl; //the sum of the value
+	if (prime(val) == true) {								//is the value a prime number
+		std::cout << val << " Is a prime" << std::endl;
+	}
+	else {
+		std::cout << val << " Is not a prime" << std::endl;
+	}
+	std::cout << std::fixed << "The " << val << ". fibonachi nr is: " << fibo(val) << std::endl;
+	return 0;
+}
+
+
 //exc 2
-int main()
+int exc2()
 {
 	std::string test;
 	std::cout << "Write ( or )" << std::endl;
+	std::cin.ignore();
 	std::getline(std::cin, test);
 	bool testbool = matchingBrackets(test);
 	if (testbool == true)
@@ -97,27 +121,23 @@ int main()
 	{
 		std::cout << "There is not an equal amout" << std::endl;
 	}
+	return 0;
 }
 
-
-// exc 1
-/*int main()
+int  main()
 {
-	while (true) {
-
-	std::cout << "input a value: ";
-
-	std::cin >> val; //input a value to test
-
-	std::cout << "Sum of " << val  << " = "<< sum(val) << std::endl; //the sum of the value
-
-	if (prime(val) == true) {								//is the value a prime number
-		std::cout << val << " Is a prime" << std::endl;
+	std::cout << "Choose the number of the exc" << std::endl;
+	std::cout << "Exc 1 = 1" << std::endl;
+	std::cout << "Exc 2 = 2" << std::endl;
+	std::cin >> val;
+	switch (val)
+	{
+	case 1: exc1();
+		break;
+	case 2: exc1();
+		break;
+	default:
+		break;
 	}
-	else {
-		std::cout << val << " Is not a prime" << std::endl;
-	}
 
-	std::cout << std::fixed << "The " << val << ". fibonachi nr is: " << fibo(val) << std::endl;
 }
-}*/
