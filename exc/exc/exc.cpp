@@ -134,10 +134,10 @@ int  main()
 	{
 	case 1: exc1();
 		break;
-	case 2: exc1();
+	case 2: exc2();
 		break;
 	default:
 		break;
 	}
-
+	std::cin.get();
 }
