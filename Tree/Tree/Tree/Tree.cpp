@@ -15,6 +15,8 @@ int main()
 		Tree.insert(rand() % 10 + 1);
 	}
 	Tree.printTree();
+
+	Tree.pre_order();
     return 0;
 }
 

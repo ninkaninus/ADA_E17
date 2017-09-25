@@ -37,6 +37,10 @@ public:
 	void insert(const int & x);
 	void insert(int && x);
 	void remove(const int & x);
+	void pre_order();
+	void in_order();
+	void post_order();
+	void level_order();
 	
 private:
 	BinaryNode *root;

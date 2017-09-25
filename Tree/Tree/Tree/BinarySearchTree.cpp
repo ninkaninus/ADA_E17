@@ -77,6 +77,22 @@ void BinarySearchTree::remove(const int & x)
 	remove(x, root);
 }
 
+void BinarySearchTree::pre_order()
+{
+}
+
+void BinarySearchTree::in_order()
+{
+}
+
+void BinarySearchTree::post_order()
+{
+}
+
+void BinarySearchTree::level_order()
+{
+}
+
 void BinarySearchTree::insert(const int & x, BinaryNode * & t)
 {
 	if (t == nullptr)
@@ -181,3 +197,4 @@ BinaryNode * BinarySearchTree::clone(BinaryNode *t) const
 	else
 		return new BinaryNode{ t->element, clone(t->left), clone(t->right) };
 }
+
