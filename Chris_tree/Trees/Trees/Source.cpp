@@ -19,8 +19,15 @@ int main()
 	Tree.in_order();
 	cout << "post order traversal:" << endl << "_______________________________" << endl;
 	Tree.post_order();
-	cout << "post order traversal:" << endl << "_______________________________" << endl;
+	cout << "Level order traversal:" << endl << "_______________________________" << endl;
 	Tree.level_order();
-
+	cout << "Numbers of nodes" << endl << "_______________________________" << endl;
+	cout << Tree.nodes() << endl;
+	cout << "Numbers of leaves" << endl << "_______________________________" << endl;
+	cout << Tree.leaves() << endl;
+	cout << "Numbers of fullnodes" << endl << "_______________________________" << endl;
+	cout << Tree.fullnodes() << endl;
+	cout << "internal path lenght" << endl << "_______________________________" << endl;
+	cout << Tree.int_pathlenght() << endl;
 	return 0;
 }

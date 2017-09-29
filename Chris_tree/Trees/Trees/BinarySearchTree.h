@@ -42,6 +42,11 @@ public:
 	void in_order();
 	void post_order();
 	void level_order();
+
+	int nodes();
+	int leaves();
+	int fullnodes();
+	int int_pathlenght();
 	
 private:
 
@@ -49,6 +54,10 @@ private:
 	void in_order(BinaryNode *t);
 	void post_order(BinaryNode *t);
 	void level_order(BinaryNode *t);
+	int nodes(BinaryNode *t);
+	int leaves(BinaryNode *t);
+	int fullnodes(BinaryNode *t);
+	int int_pathlenght(BinaryNode *t, int value);
 
 	BinaryNode *root;
 

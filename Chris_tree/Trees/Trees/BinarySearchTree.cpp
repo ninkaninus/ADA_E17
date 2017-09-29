@@ -108,6 +108,40 @@ void BinarySearchTree::level_order()
 		level_order(root);
 }
 
+int BinarySearchTree::nodes()
+{
+	if (isEmpty())
+	{
+		cout << "empty tree" << endl;
+		return 0;
+	}
+	else
+		return nodes(root);
+}
+
+int BinarySearchTree::leaves()
+{
+	if (isEmpty())
+		cout << "empty tree" << endl;
+	else
+		return leaves(root);
+}
+
+int BinarySearchTree::fullnodes()
+{
+	if (isEmpty())
+		cout << "empty tree" << endl;
+	else
+		return fullnodes(root);
+}
+
+int BinarySearchTree::int_pathlenght()
+{
+	if (isEmpty())
+		cout << "empty tree" << endl;
+	return int_pathlenght(root,0);
+}
+
 void BinarySearchTree::pre_order(BinaryNode * t)
 {
 	if (t != nullptr)
@@ -154,6 +188,57 @@ void BinarySearchTree::level_order(BinaryNode * t)
 	}
 
 
+}
+
+int BinarySearchTree::nodes(BinaryNode * t)
+{
+	int numbers = 0;
+	if (t == nullptr)
+		return 0;
+
+	numbers += nodes(t->left);
+	numbers += nodes(t->right);
+	return numbers+1;
+}
+
+int BinarySearchTree::leaves(BinaryNode * t)
+{
+	int count = 0;
+	if (t == nullptr)
+		return 0;
+
+	if (t->left == nullptr && t->right == nullptr)
+		return 1;
+
+	count += leaves(t->left);
+	count += leaves(t->right);
+
+	return count;
+}
+
+int BinarySearchTree::fullnodes(BinaryNode * t)
+{
+	int count = 0;
+
+	if (t == nullptr)
+		return 0;
+
+	count += fullnodes(t->left);
+	count += fullnodes(t->right);
+
+	if (t->left != nullptr && t->right != nullptr)
+		return count + 1;
+	return count;
+
+
+}
+
+int BinarySearchTree::int_pathlenght(BinaryNode * t, int value)
+{
+	if (t == nullptr)
+		return 0;
+
+	return value + int_pathlenght(t->left, value + 1) + int_pathlenght(t->right, value + 1);
 }
 
 void BinarySearchTree::insert(const int & x, BinaryNode * & t)
